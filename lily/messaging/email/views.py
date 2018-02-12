@@ -48,9 +48,8 @@ from .tasks import (send_message, create_draft_email_message, update_draft_email
 from .utils import (
     get_attachment_filename_from_url, get_email_parameter_choices,
     create_recipients, render_email_body, replace_cid_in_html,
-    reindex_email_message, extract_script_tags,
-    get_filtered_message, get_formatted_reply_email_subject,
-    get_formatted_email_body
+    extract_script_tags, get_filtered_message,
+    get_formatted_reply_email_subject, get_formatted_email_body
 )
 
 

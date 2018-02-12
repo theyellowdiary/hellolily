@@ -19,11 +19,11 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
 from lily.accounts.models import Account
+from lily.google.token_generator import generate_token
 from lily.messaging.email.utils import get_shared_email_accounts
 from lily.messaging.email.connector import GmailConnector, NotFoundError, FailedServiceCallException
 from lily.messaging.email.credentials import InvalidCredentialsError
 from lily.messaging.email.tasks import send_message
-from lily.messaging.email.utils import reindex_email_message, get_shared_email_accounts
 from lily.utils.functions import format_phone_number
 from lily.utils.models.models import PhoneNumber
 

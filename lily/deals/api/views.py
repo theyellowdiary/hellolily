@@ -101,7 +101,7 @@ class DealFilter(filters.FilterSet):
     class Meta:
         model = Deal
         fields = {
-            'account': ['exact', ],
+            'account__id': ['exact', ],
             'amount_once': ['exact', 'lt', 'lte', 'gt', 'gte', ],
             'amount_recurring': ['exact', 'lt', 'lte', 'gt', 'gte', ],
             'assigned_to': ['exact', ],

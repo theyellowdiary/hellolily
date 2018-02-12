@@ -26,7 +26,7 @@ from jinja2 import TemplateSyntaxError
 from lily.accounts.models import Account
 from lily.contacts.models import Contact
 
-from .models.models import EmailAttachment, EmailAccount, SharedEmailConfig
+from .models.models import EmailAttachment, EmailMessage, EmailAccount, SharedEmailConfig
 from .sanitize import sanitize_html_email
 
 _EMAIL_PARAMETER_DICT = {}

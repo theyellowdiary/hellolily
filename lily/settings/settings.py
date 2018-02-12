@@ -783,10 +783,6 @@ SHELL_PLUS_POST_IMPORTS = (
     ('lily.tenant.middleware', 'set_current_user'),
 )
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3001',
-)
-
 SWAGGER_SETTINGS = {
     'DEFAULT_INFO': 'lily.api.swagger_settings.swagger_info',
     'DEFAULT_AUTO_SCHEMA_CLASS': 'lily.api.swagger_settings.LilyAutoSchema',

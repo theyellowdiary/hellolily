@@ -43,9 +43,12 @@ class TenantViewSet(mixins.UpdateModelMixin, mixins.ListModelMixin, GenericViewS
 
     @list_route(methods=['GET'])
     def info(self, request):
+        email_account_count = EmailAccount.objects.filter(is_deleted=False).count()
+
         object_counts = {
             'cases': Case.objects.count(),
-            'deals': Deal.objects.count()
+            'deals': Deal.objects.count(),
+            'email_accounts': email_account_count
         }
 
         trial_remaining = request.user.tenant.billing.trial_remaining
@@ -53,7 +56,6 @@ class TenantViewSet(mixins.UpdateModelMixin, mixins.ListModelMixin, GenericViewS
         if not has_required_tier(1):
             account_count = Account.objects.filter(is_deleted=False).count()
             contact_count = Contact.objects.filter(is_deleted=False).count()
-            email_account_count = EmailAccount.objects.filter(is_deleted=False).count()
 
             limit_reached = {
                 'accounts': account_count >= settings.FREE_PLAN_ACCOUNT_CONTACT_LIMIT,
