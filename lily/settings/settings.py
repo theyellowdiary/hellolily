@@ -667,6 +667,7 @@ REST_FRAMEWORK = {
     'DEFAULT_METADATA_CLASS': 'lily.api.drf_extensions.metadata.CustomMetaData',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',  # Use application/json instead of multipart/form-data requests in tests.
     'DEFAULT_PAGINATION_CLASS': 'lily.api.drf_extensions.pagination.CustomPagination',
+    'COERCE_DECIMAL_TO_STRING': False,
 }
 
 #######################################################################################################################
@@ -777,6 +778,10 @@ SHELL_PLUS_POST_IMPORTS = (
     ('lily.tenant.factories', '*'),
     ('lily.users.factories', '*'),
     ('lily.tenant.middleware', 'set_current_user'),
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3001',
 )
 
 SWAGGER_SETTINGS = {
