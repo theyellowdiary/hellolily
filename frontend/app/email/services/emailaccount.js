@@ -42,7 +42,6 @@ function EmailAccount($resource) {
             mine: {
                 method: 'GET',
                 url: '/api/messaging/email/accounts/mine/',
-                isArray: true,
             },
             color: {
                 method: 'GET',
